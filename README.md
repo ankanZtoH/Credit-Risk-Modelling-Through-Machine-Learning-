@@ -1,211 +1,151 @@
-📊 Machine Learning Fundamentals & Credit Risk Modeling
+# 📊 Machine Learning Fundamentals & Credit Risk Modeling
 
-This repository contains my learning-based machine learning project notes and implementations, covering classification metrics, regression metrics, imbalanced data handling, hypothesis testing, multicollinearity, and credit risk modeling concepts.
-The project focuses on understanding real-world ML problems, not just model accuracy.
+This repository contains my learning-based project on Machine Learning fundamentals,
+focusing on real-world evaluation metrics, imbalanced datasets, statistics,
+and credit risk modeling used in banking.
 
-🚀 Project Objectives
+---
 
-Understand why accuracy alone is misleading in imbalanced datasets
+## 🎯 Project Goals
 
-Learn and apply classification & regression evaluation metrics
+- Understand why accuracy fails for imbalanced datasets
+- Learn classification and regression metrics
+- Apply statistical reasoning in ML
+- Study multicollinearity and feature dependency
+- Understand credit risk concepts used by banks
 
-Explore credit risk modeling concepts used in banks
+---
 
-Study hypothesis testing for data-driven decision making
+## 🧠 Topics Covered
 
-Analyze multicollinearity vs correlation using VIF
+### 1. Classification Metrics
 
-Build strong ML fundamentals for real-world applications
+- Accuracy
+- Precision
+- Recall
+- F1-Score (Harmonic Mean of Precision and Recall)
 
-📌 Topics Covered
-1️⃣ Classification Metrics
+High accuracy does not always mean a good model,
+especially in imbalanced datasets.
 
-Implemented and explained using confusion matrices:
+---
 
-Accuracy
+### 2. Imbalanced Dataset Problem
 
-Precision
+Example: Terrorist vs Non-Terrorist classification
 
-Recall
+- Dataset is highly imbalanced
+- Model shows 98% accuracy
+- Recall for minority class is 0%
 
-F1-score (Harmonic mean of Precision & Recall)
+This proves accuracy alone is misleading.
+F1-Score and Recall are more reliable metrics.
 
-📌 Special focus on imbalanced datasets, where:
+---
 
-High accuracy ≠ good model
+### 3. Regression Metrics
 
-Recall & F1-score are more important
+- MAE (Mean Absolute Error)
+- MSE (Mean Squared Error)
+- RMSE (Root Mean Squared Error)
+- MAPE (Mean Absolute Percentage Error)
+- R² Score
 
-Example:
-A terrorism detection problem where accuracy is 98%, but recall is 0% → dangerous model
+Formula:
+```
+R² = 1 - (SSR / SST)
+```
 
-2️⃣ Imbalanced Dataset Handling
+---
 
-Why accuracy fails
+### 4. Train vs Test Accuracy
 
-Importance of:
+- Checking only training accuracy gives false confidence
+- Always evaluate both training and testing performance
 
-Recall (false negatives are costly)
+---
 
-F1-score
+### 5. Hypothesis Testing
 
-Conceptual use of:
+- Null Hypothesis (H₀)
+- Alternate Hypothesis (H₁)
+- Significance Level (α)
+- p-value interpretation
 
-Oversampling
+Decision rule:
+- p-value ≤ α → Reject H₀
+- p-value > α → Fail to Reject H₀
 
-Proper loss metric selection
+---
 
-3️⃣ Regression Metrics
+### 6. Multicollinearity (VIF)
 
-Used for evaluating regression models:
+Formula:
+```
+VIF = 1 / (1 - R²)
+```
 
-MAE – Mean Absolute Error
+| VIF Value | Interpretation |
+|-----------|----------------|
+| 1         | No multicollinearity |
+| 1–5       | Low |
+| 5–10      | Moderate |
+| >10       | High |
 
-MSE – Mean Squared Error
+---
 
-RMSE – Root Mean Squared Error
+## 🏦 Credit Risk Modeling
 
-MAPE – Mean Absolute Percentage Error
+### Assets
 
-R² Score
+- Housing Loan
+- Personal Loan
+- Vehicle Loan
+- Education Loan
+- Credit Card Loan
 
-📌 Notes:
+### Liabilities
 
-RMSE is scale-dependent
+- Savings Account
+- Current Account
+- Fixed Deposit
+- Recurring Deposit
 
-R² explains variance using:
+---
 
-R² = 1 − (SSR / SST)
+### Key Credit Risk Terms
 
-4️⃣ Train vs Test Accuracy
+- **NPA**: Loan with delayed repayment
+- **Disbursed Amount**: Total loan given
+- **OSP**: Outstanding Principal
+- **DPD**: Days Past Due
+- **PAR**: Portfolio at Risk
 
-Checking accuracy on training data only leads to underfitting illusion
+---
 
-Proper evaluation requires:
+### Loan Classification by DPD
 
-Training accuracy
+| DPD Range | Account Status |
+|-----------|----------------|
+| 0         | NDA (Timely Paid) |
+| 1–30      | SMA-1 |
+| 31–60     | SMA-2 |
+| 61–90     | SMA-3 |
+| 91–180    | NPA |
+| >180      | Written-Off |
 
-Testing accuracy
+---
 
-5️⃣ Hypothesis Testing
+## 🛠 Tools & Skills
 
-Covered statistical testing fundamentals:
+- Python
+- Machine Learning
+- Statistics
+- Banking Domain Knowledge
 
-Null Hypothesis (H₀)
+---
 
-Alternate Hypothesis (H₁)
+## 👤 Author
 
-Significance Level (α)
-
-p-value interpretation
-
-Why we say “Fail to Reject H₀” instead of “Accept H₀”
-
-📌 Tests discussed:
-
-T-test → Categorical vs Numerical
-
-Chi-square test → Categorical vs Categorical
-
-ANOVA
-
-6️⃣ Multicollinearity vs Correlation
-
-Correlation checks linear relationship
-
-Multicollinearity checks feature predictability from other features
-
-📌 Used Variance Inflation Factor (VIF):
-
-VIF = 1 / (1 − R²)
-
-VIF Value	Interpretation
-1	No multicollinearity
-1 – 5	Low
-5 – 10	Moderate
-> 10	High
-7️⃣ Credit Risk Modeling (Banking Use Case)
-Assets
-
-Housing Loan
-
-Personal Loan
-
-Vehicle Loan
-
-Education Loan
-
-Credit Card Loan
-
-Liabilities
-
-Savings Account
-
-Current Account
-
-Fixed Deposit
-
-Recurring Deposit
-
-8️⃣ Key Credit Risk Concepts
-🔹 NPA (Non-Performing Asset)
-
-Loan where repayment is delayed beyond acceptable limits.
-
-🔹 Disbursed Amount
-
-Total loan amount given to the customer.
-
-🔹 OSP (Outstanding Principal)
-
-Remaining unpaid loan amount.
-
-🔹 DPD (Days Past Due)
-
-Delay in repayment.
-
-🔹 PAR (Portfolio at Risk)
-
-Loans where DPD > 0.
-
-9️⃣ Loan Classification by DPD
-DPD Range	Account Status
-0	NDA (Non-Delinquent Account)
-1–30	SMA-1
-31–60	SMA-2
-61–90	SMA-3
-91–180	NPA
->180	Written-off
-🛠️ Tools & Skills Used
-
-Python
-
-Machine Learning fundamentals
-
-Statistics & Probability
-
-Banking domain knowledge
-
-Model evaluation techniques
-
-📚 Learning Outcome
-
-This project helped me understand:
-
-Why real ML problems are metric-driven
-
-How domain knowledge (banking) influences model choice
-
-The importance of statistical reasoning in ML
-
-Why F1-score & Recall matter more than accuracy in critical systems
-
-📌 Future Improvements
-
-Implement models using real datasets
-
-Apply SMOTE & cost-sensitive learning
-
-Build an end-to-end credit risk prediction pipeline
-
-Add visualization & model explainability
+**Ankan Bera**  
+Master’s Student – Data Science & AI
