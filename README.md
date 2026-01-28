@@ -135,7 +135,83 @@ VIF = 1 / (1 - R²)
 | >180      | Written-Off |
 
 ---
+## 📊 Classification Metrics (with Formulas)
 
+All metrics are derived from the **confusion matrix**.
+
+### Confusion Matrix
+
+| Actual / Predicted | Positive | Negative |
+|--------------------|----------|----------|
+| Positive           | TP       | FN       |
+| Negative           | FP       | TN       |
+
+Where:
+- TP = True Positive  
+- TN = True Negative  
+- FP = False Positive  
+- FN = False Negative  
+
+---
+
+### Accuracy
+
+Out of all predictions, how many are correct.
+
+```
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+```
+
+📌 Works well only when data is **balanced**.
+
+---
+
+### Precision
+
+Out of all predicted positives, how many are actually positive.
+
+```
+Precision = TP / (TP + FP)
+```
+
+📌 Important when **false positives are costly**.
+
+---
+
+### Recall (Sensitivity)
+
+Out of all actual positives, how many were correctly predicted.
+
+```
+Recall = TP / (TP + FN)
+```
+
+📌 Very important when **false negatives are dangerous**  
+(e.g. fraud detection, disease detection, terrorism detection).
+
+---
+
+### F1-Score
+
+Harmonic mean of Precision and Recall.
+
+```
+F1-Score = 2 × (Precision × Recall) / (Precision + Recall)
+```
+
+📌 Best metric for **imbalanced datasets**.
+
+---
+
+### Why Accuracy Fails (Imbalanced Data)
+
+Example:
+- Accuracy = 98%
+- Recall = 0%
+
+This means the model **misses all minority class cases**,
+which makes it unusable in real-world critical systems.
+---
 ## 🛠 Tools & Skills
 
 - Python
